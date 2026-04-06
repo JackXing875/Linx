@@ -1,150 +1,175 @@
-# Pulse ⚡
+# linx
 
-> **Feel the heartbeat of your codebase.**
+<p align="center">
+  <strong>A fast CLI for scanning codebases and summarizing code statistics.</strong>
+</p>
 
-Pulse is a beautiful, fast CLI tool that scans your project and gives you a full breakdown of code statistics — lines by language, file distribution, comment ratios, and quirky fun facts — all rendered in a stunning terminal UI.
+<p align="center">
+  English · <a href="./README.zh-CN.md">简体中文</a>
+</p>
 
----
+`linx` is a lightweight command-line tool that scans a project directory and prints a clean summary of:
+
+- lines by language
+- total / code / comment / blank lines
+- largest files
+- quick fun facts
+- JSON and CSV exports
+
+It is designed to be simple, fast, and readable in a real terminal.
 
 ## Features
 
-- 📊 **Language breakdown** — lines of code per language with visual bar charts
-- 📁 **File-level stats** — top largest files, deepest nesting, hottest modules
-- 💬 **Comment & blank line ratio** — understand how well-documented your project is
-- ☕ **Fun facts** — coffee cups needed, reading time, COCOMO project value estimate
-- 📤 **Export** — save results as JSON or CSV for CI pipelines and dashboards
-- 🎨 **Beautiful output** — color-coded, minimal, and fast. No bloat.
+- Language breakdown with visual bars
+- Largest file ranking
+- Comment and blank line counting
+- `.gitignore` support
+- Extra ignore patterns from the CLI
+- JSON / CSV export
+- Colorful terminal output with a plain-text fallback
 
----
+## Quick Start
 
-## Installation
-
-```bash
-npm install -g pulse-cli
-```
-
-Or run without installing:
+Install dependencies:
 
 ```bash
-npx pulse-cli
+npm install
 ```
 
----
+Run from source:
+
+```bash
+node ./bin/linx.js .
+```
+
+Or link it as a local command:
+
+```bash
+npm link
+linx .
+```
 
 ## Usage
 
 ```bash
-# Scan current directory
-pulse
-
-# Scan a specific path
-pulse ./my-project
-
-# Show top 10 largest files
-pulse --top 10
-
-# Export results to JSON
-pulse --export stats.json
-
-# Export as CSV
-pulse --export stats.csv
-
-# Disable color output (for CI environments)
-pulse --no-color
-
-# Compare with a previous scan
-pulse --diff stats.json
+linx [dir]
 ```
 
----
+Examples:
+
+```bash
+# Scan the current directory
+linx
+
+# Scan a specific directory
+linx ./src
+
+# Show the 10 largest files
+linx . --top 10
+
+# Add extra ignore patterns
+linx . --ignore coverage dist '*.snap'
+
+# Export as JSON
+linx . --export ./stats.json
+
+# Export as CSV
+linx . --export ./stats.csv
+
+# Disable colors
+linx . --no-color
+```
 
 ## Example Output
 
-```
+```text
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-◆ PULSE  v1.0.0  │  scanning ./my-project
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-SCANNING ████████████████████ 100%   247 files found
-
-TypeScript   ████████████████████░░░░░░░   58.2%   12,481 lines
-JavaScript   ██████░░░░░░░░░░░░░░░░░░░░░   17.8%    3,819 lines
-HTML         ████░░░░░░░░░░░░░░░░░░░░░░░   11.1%    2,380 lines
-CSS          ██░░░░░░░░░░░░░░░░░░░░░░░░░    7.3%    1,566 lines
-Python       █░░░░░░░░░░░░░░░░░░░░░░░░░░    5.6%    1,201 lines
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Total Lines   21,447    Code   18,902    Comments   1,841    Blank   704
+LINX  scanning ./my-project
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-✦ FUN FACTS
-  ☕ Coffee needed: ~38 cups
-  📖 Reading time: 3.2 days
-  💰 Est. value: $74,200  (COCOMO model)
-  🔥 Hottest file: src/api/router.ts (847 lines)
-  🏆 Language streak: TypeScript · 47 days
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+248 files  21,447 lines  18,902 code / 1,841 comments / 704 blank
+
+TypeScript     ███████████████████░░░░░  58.2%   12,481 lines
+JavaScript     ██████░░░░░░░░░░░░░░░░░░  17.8%    3,819 lines
+HTML           ████░░░░░░░░░░░░░░░░░░░░  11.1%    2,380 lines
+CSS            ██░░░░░░░░░░░░░░░░░░░░░░   7.3%    1,566 lines
+Python         █░░░░░░░░░░░░░░░░░░░░░░░   5.6%    1,201 lines
+
+Top Files
+src/api/router.ts     847 lines · TypeScript
+src/core/config.ts    611 lines · TypeScript
+src/index.ts          488 lines · TypeScript
+
+Fun Facts
+Coffee needed: ~38 cups
+Reading time: 9.5 hours
+Estimated value: $74,200
+Hottest file: src/api/router.ts (847 lines)
+
 Generated in 0.43s
 ```
 
----
+## Command Options
 
-## Options
+| Flag | Description |
+|---|---|
+| `--top <n>` | Show the largest `n` files |
+| `--export <file>` | Export the report as `.json` or `.csv` |
+| `--ignore <pattern...>` | Add ignore patterns on top of `.gitignore` |
+| `--no-color` | Disable colored output |
+| `--help` | Show CLI help |
 
-| Flag | Alias | Description |
-|---|---|---|
-| `--top <n>` | `-t` | Show top N largest files (default: 5) |
-| `--export <file>` | `-e` | Export results to `.json` or `.csv` |
-| `--diff <file>` | `-d` | Compare against a previous export |
-| `--ignore <pattern>` | `-i` | Additional ignore patterns |
-| `--no-color` | | Disable color output |
-| `--version` | `-v` | Show version |
-| `--help` | `-h` | Show help |
+## What linx Scans
 
----
+`linx` currently recognizes common source and text formats, including:
 
-## Ignored by Default
+TypeScript, JavaScript, Python, Rust, Go, Java, C, C++, C#, CSS, HTML, Markdown, JSON, YAML, TOML, Shell, SQL, Ruby, PHP, Swift, Kotlin, XML, Dockerfile, and Makefile.
 
-Pulse automatically skips directories and files that don't belong to your source code:
+It also respects:
 
-- `node_modules/`, `.git/`, `dist/`, `build/`, `.next/`
-- Binary files (images, fonts, executables)
-- Lock files (`package-lock.json`, `yarn.lock`, etc.)
-- Your project's `.gitignore` rules are respected automatically
+- your project's `.gitignore`
+- common build and dependency directories such as `node_modules/`, `dist/`, `build/`, and `coverage/`
+- binary file detection
 
----
+## Exporting
 
-## Supported Languages
+Two export formats are supported:
 
-Pulse recognizes 40+ languages out of the box, including:
+- `.json` for structured reporting and automation
+- `.csv` for spreadsheets and lightweight analysis
 
-TypeScript · JavaScript · Python · Rust · Go · Java · C · C++ · C# · Ruby · PHP · Swift · Kotlin · Dart · HTML · CSS · SCSS · SQL · Shell · Markdown · JSON · YAML · TOML · and more.
-
-Missing a language? [Open an issue](https://github.com/your-username/pulse) or submit a PR — the config is a single JSON file.
-
----
-
-## Why Pulse?
-
-Most code counters are either too minimal (just raw numbers) or too heavy (spawning a full LSP). Pulse sits in the sweet spot: **instant, readable, and actually enjoyable to run.**
-
-It's the kind of tool you add to your project onboarding docs so new teammates can understand the codebase at a glance.
-
----
-
-## Contributing
+Example:
 
 ```bash
-git clone https://github.com/your-username/pulse
-cd pulse
-npm install
-npm link        # makes `pulse` available globally from source
+linx . --export ./stats.json
+linx . --export ./stats.csv
 ```
 
-Pull requests are welcome. Please open an issue first for major changes.
+## Development
 
----
+Run locally:
+
+```bash
+npm install
+node ./bin/linx.js .
+```
+
+Link the command for repeated testing:
+
+```bash
+npm link
+linx .
+```
+
+## Roadmap
+
+Planned improvements that fit the current codebase:
+
+- more accurate comment parsing
+- more language definitions
+- progress display for large repositories
+- historical diff support
 
 ## License
 
-MIT © 2025
+GNU General Public License Version 3, 29 June 2007
