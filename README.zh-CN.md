@@ -29,7 +29,7 @@
 当前已发布的 npm 包：
 
 ```bash
-@jackxing875/linx@1.0.1
+@jackxing875/linx@1.0.2
 ```
 
 快速安装：

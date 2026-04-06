@@ -29,7 +29,7 @@ It is designed to be simple, fast, and readable in a real terminal.
 Published package:
 
 ```bash
-@jackxing875/linx@1.0.1
+@jackxing875/linx@1.0.2
 ```
 
 Quick install:
