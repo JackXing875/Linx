@@ -1,6 +1,6 @@
 {
   "name": "@jackxing875/linx",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A fast CLI to scan a codebase and summarize code statistics.",
   "type": "module",
   "keywords": [
