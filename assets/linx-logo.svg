@@ -14,6 +14,6 @@
     <circle cx="122" cy="18" r="5" fill="#EA580C"/>
   </g>
 
-  <text x="272" y="112" fill="#0F172A" font-family="'Avenir Next', 'Segoe UI', Arial, sans-serif" font-size="92" font-weight="800" letter-spacing="-4">linx</text>
-  <text x="277" y="146" fill="#64748B" font-family="'Avenir Next', 'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4">CODEBASE INSIGHT CLI</text>
+  <text x="421" y="112" fill="#0F172A" font-family="'Avenir Next', 'Segoe UI', Arial, sans-serif" font-size="92" font-weight="800" letter-spacing="-4" text-anchor="middle">linx</text>
+  <text x="421" y="146" fill="#64748B" font-family="'Avenir Next', 'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4" text-anchor="middle">CODEBASE INSIGHT CLI</text>
 </svg>

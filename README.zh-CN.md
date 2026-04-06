@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JackXing875/Linx/main/assets/linx-logo.svg" alt="linx logo" width="360">
+  <img src="./assets/linx-logo.svg" alt="linx logo" width="360">
 </p>
 
 <p align="center">
