@@ -20,7 +20,7 @@
     "url": "git+https://github.com/JackXing875/Linx.git"
   },
   "bin": {
-    "linx": "./bin/linx.js"
+    "linx": "bin/linx.js"
   },
   "files": [
     "assets",

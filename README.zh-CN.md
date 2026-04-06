@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-
+  <img alt="npm package" src="https://img.shields.io/badge/npm-%40jackxing875%2Flinx%401.0.0-CB3837?style=flat-square">
   <img alt="license" src="https://img.shields.io/badge/license-GPLv3-16a34a?style=flat-square">
   <img alt="runtime" src="https://img.shields.io/badge/runtime-Node.js-5fa04e?style=flat-square">
 </p>
@@ -25,6 +25,19 @@
 - JSON / CSV 导出
 
 它的目标不是做成一个臃肿的分析平台，而是让你在几秒内看懂一个项目的大致规模和结构。
+
+当前已发布的 npm 包：
+
+```bash
+@jackxing875/linx@1.0.0
+```
+
+快速安装：
+
+```bash
+npm install -g @jackxing875/linx
+linx .
+```
 
 ## 功能特性
 
@@ -44,6 +57,12 @@
 npm install -g @jackxing875/linx
 ```
 
+如果你想固定安装 `1.0.0` 版本：
+
+```bash
+npm install -g @jackxing875/linx@1.0.0
+```
+
 安装后直接使用：
 
 ```bash
@@ -54,6 +73,12 @@ linx .
 
 ```bash
 npx @jackxing875/linx .
+```
+
+如果你想直接运行固定版本：
+
+```bash
+npx @jackxing875/linx@1.0.0 .
 ```
 
 ## 本地开发

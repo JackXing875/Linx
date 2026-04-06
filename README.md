@@ -7,6 +7,7 @@
 </p>
 
 <p align="center">
+  <img alt="npm package" src="https://img.shields.io/badge/npm-%40jackxing875%2Flinx%401.0.0-CB3837?style=flat-square">
   <img alt="license" src="https://img.shields.io/badge/license-GPLv3-16a34a?style=flat-square">
   <img alt="runtime" src="https://img.shields.io/badge/runtime-Node.js-5fa04e?style=flat-square">
 </p>
@@ -24,6 +25,19 @@
 - JSON and CSV exports
 
 It is designed to be simple, fast, and readable in a real terminal.
+
+Published package:
+
+```bash
+@jackxing875/linx@1.0.0
+```
+
+Quick install:
+
+```bash
+npm install -g @jackxing875/linx
+linx .
+```
 
 ## Features
 
@@ -43,6 +57,12 @@ Install globally from npm:
 npm install -g @jackxing875/linx
 ```
 
+Install a fixed version explicitly:
+
+```bash
+npm install -g @jackxing875/linx@1.0.0
+```
+
 Then run:
 
 ```bash
@@ -53,6 +73,12 @@ Run without a permanent install:
 
 ```bash
 npx @jackxing875/linx .
+```
+
+Run a fixed published version:
+
+```bash
+npx @jackxing875/linx@1.0.0 .
 ```
 
 ## Local Development
