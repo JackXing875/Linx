@@ -1,5 +1,19 @@
-<svg width="720" height="180" viewBox="0 0 720 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="720" height="180" rx="28" fill="#FFF7ED"/>
-  <text x="60" y="112" fill="#0F172A" font-family="'Avenir Next', 'Segoe UI', Arial, sans-serif" font-size="96" font-weight="800" letter-spacing="-4">linx</text>
-  <text x="64" y="146" fill="#64748B" font-family="'Avenir Next', 'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4">CODEBASE INSIGHT CLI</text>
+<svg width="820" height="180" viewBox="0 0 820 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="820" height="180" rx="28" fill="#FFF7ED"/>
+
+  <g transform="translate(78 42)">
+    <rect x="0" y="0" width="150" height="96" rx="20" fill="#FFEDD5"/>
+    <rect x="18" y="58" width="16" height="20" rx="8" fill="#14B8A6"/>
+    <rect x="50" y="42" width="16" height="36" rx="8" fill="#14B8A6"/>
+    <rect x="82" y="24" width="16" height="54" rx="8" fill="#14B8A6"/>
+    <rect x="114" y="10" width="16" height="68" rx="8" fill="#F97316"/>
+    <path d="M26 34L58 40L90 24L122 18" stroke="#0F172A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.18"/>
+    <circle cx="26" cy="34" r="5" fill="#0F766E"/>
+    <circle cx="58" cy="40" r="5" fill="#0F766E"/>
+    <circle cx="90" cy="24" r="5" fill="#0F766E"/>
+    <circle cx="122" cy="18" r="5" fill="#EA580C"/>
+  </g>
+
+  <text x="272" y="112" fill="#0F172A" font-family="'Avenir Next', 'Segoe UI', Arial, sans-serif" font-size="92" font-weight="800" letter-spacing="-4">linx</text>
+  <text x="277" y="146" fill="#64748B" font-family="'Avenir Next', 'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4">CODEBASE INSIGHT CLI</text>
 </svg>
