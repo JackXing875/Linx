@@ -184,14 +184,6 @@ npm run pack:check
 npm publish --access public
 ```
 
-## 后续计划
-
-比较适合继续补强的方向：
-
-- 更准确的注释统计
-- 更多语言规则
-- 大仓库扫描进度显示
-- 历史对比 / diff 支持
 
 ## License
 

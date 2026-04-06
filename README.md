@@ -183,14 +183,6 @@ npm run pack:check
 npm publish --access public
 ```
 
-## Roadmap
-
-Planned improvements that fit the current codebase:
-
-- more accurate comment parsing
-- more language definitions
-- progress display for large repositories
-- historical diff support
 
 ## License
 
