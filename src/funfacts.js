@@ -5,14 +5,14 @@ export function coffeeCount(lines) {
 export function readingTime(lines) {
   const minutes = (lines * 8) / 300;
   if (minutes >= 60 * 8) {
-    return `${(minutes / (60 * 8)).toFixed(1)} 个工作日`;
+    return `${(minutes / (60 * 8)).toFixed(1)} days`;
   }
 
   if (minutes >= 60) {
-    return `${(minutes / 60).toFixed(1)} 小时`;
+    return `${(minutes / 60).toFixed(1)} hours`;
   }
 
-  return `${Math.max(1, Math.round(minutes))} 分钟`;
+  return `${Math.max(1, Math.round(minutes))} minutes`;
 }
 
 
