@@ -4,6 +4,7 @@ import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
 import { countLines, getLanguageForFile } from '../src/languages.js';
+import { renderReport } from '../src/renderer.js';
 import { scanDirectory } from '../src/scanner.js';
 
 test('countLines handles trailing newline without adding a phantom blank line', () => {
@@ -118,4 +119,46 @@ test('scanDirectory recognizes special filenames such as Dockerfile', async () =
   } finally {
     await fs.rm(fixtureDir, { recursive: true, force: true });
   }
+});
+
+test('renderReport prints output without depending on removed fun facts', () => {
+  const originalLog = console.log;
+  const lines = [];
+  console.log = (message) => {
+    lines.push(message);
+  };
+
+  try {
+    renderReport({
+      rootDir: '/tmp/project',
+      totalFiles: 1,
+      totals: {
+        total: 10,
+        code: 7,
+        comment: 2,
+        blank: 1,
+      },
+      languages: new Map([
+        ['JavaScript', { name: 'JavaScript', color: '#f1e05a', files: 1, total: 10, code: 7, comment: 2, blank: 1 }],
+      ]),
+      files: new Map([
+        ['src/index.js', { language: 'JavaScript', total: 10, code: 7, comment: 2, blank: 1 }],
+      ]),
+      largestFiles: [
+        ['src/index.js', { language: 'JavaScript', total: 10, code: 7, comment: 2, blank: 1 }],
+      ],
+      durationMs: 12,
+    }, {
+      color: false,
+      top: 5,
+      targetDir: '.',
+    });
+  } finally {
+    console.log = originalLog;
+  }
+
+  assert.equal(lines.length, 1);
+  assert.match(lines[0], /Fun Facts/);
+  assert.doesNotMatch(lines[0], /Estimated value/);
+  assert.match(lines[0], /Hottest file: src\/index\.js/);
 });

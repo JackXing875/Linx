@@ -48,7 +48,6 @@ export function renderReport(report, options = {}) {
   output.push(chalk.cyan('Fun Facts'));
   output.push(`Coffee needed: ~${coffeeCount(report.totals.total)} cups`);
   output.push(`Reading time: ${readingTime(report.totals.total)}`);
-  output.push(`Estimated value: ${formatCurrency(estimateValue(report.totals.code))}`);
 
   const hottest = findHottestFile(report.files);
   if (hottest) {
@@ -72,14 +71,6 @@ function buildBar(percentage, width = 24) {
 
 function formatNumber(value) {
   return new Intl.NumberFormat('en-US').format(value);
-}
-
-function formatCurrency(value) {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    maximumFractionDigits: 0,
-  }).format(value);
 }
 
 function formatDuration(durationMs) {

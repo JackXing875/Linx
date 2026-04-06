@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img alt="npm package" src="https://img.shields.io/badge/npm-%40jackxing875%2Flinx%401.0.0-CB3837?style=flat-square">
+  <img alt="npm package" src="https://img.shields.io/badge/npm-%40jackxing875%2Flinx%401.0.1-CB3837?style=flat-square">
   <img alt="license" src="https://img.shields.io/badge/license-GPLv3-16a34a?style=flat-square">
   <img alt="runtime" src="https://img.shields.io/badge/runtime-Node.js-5fa04e?style=flat-square">
 </p>
@@ -29,7 +29,7 @@ It is designed to be simple, fast, and readable in a real terminal.
 Published package:
 
 ```bash
-@jackxing875/linx@1.0.0
+@jackxing875/linx@1.0.1
 ```
 
 Quick install:
@@ -60,7 +60,7 @@ npm install -g @jackxing875/linx
 Install a fixed version explicitly:
 
 ```bash
-npm install -g @jackxing875/linx@1.0.0
+npm install -g @jackxing875/linx@1.0.1
 ```
 
 Then run:
@@ -78,7 +78,7 @@ npx @jackxing875/linx .
 Run a fixed published version:
 
 ```bash
-npx @jackxing875/linx@1.0.0 .
+npx @jackxing875/linx@1.0.1 .
 ```
 
 ## Local Development
@@ -156,7 +156,6 @@ src/index.ts          488 lines · TypeScript
 Fun Facts
 Coffee needed: ~38 cups
 Reading time: 9.5 hours
-Estimated value: $74,200
 Hottest file: src/api/router.ts (847 lines)
 
 Generated in 0.43s
