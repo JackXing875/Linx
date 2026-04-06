@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img alt="npm package" src="https://img.shields.io/badge/npm-%40jackxing875%2Flinx%401.0.1-CB3837?style=flat-square">
+  <img alt="npm package" src="https://img.shields.io/badge/npm-%40jackxing875%2Flinx%401.0.2-CB3837?style=flat-square">
   <img alt="license" src="https://img.shields.io/badge/license-GPLv3-16a34a?style=flat-square">
   <img alt="runtime" src="https://img.shields.io/badge/runtime-Node.js-5fa04e?style=flat-square">
 </p>
