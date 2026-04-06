@@ -1,5 +1,5 @@
 import { Chalk } from 'chalk';
-import { coffeeCount, estimateValue, findHottestFile, readingTime } from './funfacts.js';
+import { coffeeCount, findHottestFile, readingTime } from './funfacts.js';
 
 export function renderReport(report, options = {}) {
   const chalk = new Chalk({ level: options.color === false ? 0 : 3 });
