@@ -1,15 +1,49 @@
 {
-  "name": "linx",
+  "name": "@jackxing875/linx",
   "version": "1.0.0",
   "description": "A fast CLI to scan a codebase and summarize code statistics.",
   "type": "module",
+  "keywords": [
+    "cli",
+    "code-stats",
+    "codebase",
+    "analysis",
+    "developer-tools",
+    "terminal"
+  ],
+  "homepage": "https://github.com/JackXing875/Linx#readme",
+  "bugs": {
+    "url": "https://github.com/JackXing875/Linx/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JackXing875/Linx.git"
+  },
   "bin": {
     "linx": "./bin/linx.js"
+  },
+  "files": [
+    "assets",
+    "bin",
+    "src",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test",
+    "pack:check": "npm pack --dry-run --cache ./.npm-cache"
   },
   "license": "GPL-3.0-only",
   "dependencies": {
     "chalk": "^5.3.0",
     "commander": "^11.0.0",
     "ignore": "^5.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

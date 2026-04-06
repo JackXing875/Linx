@@ -1,7 +1,16 @@
-# linx
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JackXing875/Linx/main/assets/linx-logo.svg" alt="linx logo" width="360">
+</p>
 
 <p align="center">
   <strong>A fast CLI for scanning codebases and summarizing code statistics.</strong>
+</p>
+
+<p align="center">
+  <img alt="npm version" src="https://img.shields.io/npm/v/%40jackxing875%2Flinx?style=flat-square">
+  <img alt="package name" src="https://img.shields.io/badge/package-%40jackxing875%2Flinx-111827?style=flat-square">
+  <img alt="license" src="https://img.shields.io/badge/license-GPLv3-16a34a?style=flat-square">
+  <img alt="runtime" src="https://img.shields.io/badge/runtime-Node.js-5fa04e?style=flat-square">
 </p>
 
 <p align="center">
@@ -28,7 +37,27 @@ It is designed to be simple, fast, and readable in a real terminal.
 - JSON / CSV export
 - Colorful terminal output with a plain-text fallback
 
-## Quick Start
+## Installation
+
+Install globally from npm:
+
+```bash
+npm install -g @jackxing875/linx
+```
+
+Then run:
+
+```bash
+linx .
+```
+
+Run without a permanent install:
+
+```bash
+npx @jackxing875/linx .
+```
+
+## Local Development
 
 Install dependencies:
 
@@ -145,20 +174,15 @@ linx . --export ./stats.json
 linx . --export ./stats.csv
 ```
 
-## Development
+## Publishing
 
-Run locally:
-
-```bash
-npm install
-node ./bin/linx.js .
-```
-
-Link the command for repeated testing:
+If you maintain this package and want to publish a new release:
 
 ```bash
-npm link
-linx .
+npm login
+npm test
+npm run pack:check
+npm publish --access public
 ```
 
 ## Roadmap

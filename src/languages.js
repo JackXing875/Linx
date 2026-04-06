@@ -46,7 +46,11 @@ export function getLanguageForFile(filePath) {
 }
 
 export function countLines(content, language = null) {
-  const lines = content.split(/\r?\n/);
+  const lines = content === '' ? [] : content.split(/\r?\n/);
+  if (lines.at(-1) === '') {
+    lines.pop();
+  }
+
   const singleLine = language?.singleLine ?? [];
   const block = language?.block ?? null;
   let blank = 0;

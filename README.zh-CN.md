@@ -1,7 +1,16 @@
-# linx
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JackXing875/Linx/main/assets/linx-logo.svg" alt="linx logo" width="360">
+</p>
 
 <p align="center">
   <strong>一个快速扫描代码仓库并汇总代码统计信息的 CLI 工具。</strong>
+</p>
+
+<p align="center">
+  <img alt="npm version" src="https://img.shields.io/npm/v/%40jackxing875%2Flinx?style=flat-square">
+  <img alt="package name" src="https://img.shields.io/badge/package-%40jackxing875%2Flinx-111827?style=flat-square">
+  <img alt="license" src="https://img.shields.io/badge/license-GPLv3-16a34a?style=flat-square">
+  <img alt="runtime" src="https://img.shields.io/badge/runtime-Node.js-5fa04e?style=flat-square">
 </p>
 
 <p align="center">
@@ -28,7 +37,27 @@
 - 导出为 JSON / CSV
 - 支持彩色输出，也支持纯文本输出
 
-## 快速开始
+## 安装
+
+发布到 npm 之后，用户可以直接全局安装：
+
+```bash
+npm install -g @jackxing875/linx
+```
+
+安装后直接使用：
+
+```bash
+linx .
+```
+
+如果不想全局安装，也可以直接临时运行：
+
+```bash
+npx @jackxing875/linx .
+```
+
+## 本地开发
 
 先安装依赖：
 
@@ -145,20 +174,15 @@ linx . --export ./stats.json
 linx . --export ./stats.csv
 ```
 
-## 本地开发
+## 发布
 
-直接运行：
-
-```bash
-npm install
-node ./bin/linx.js .
-```
-
-如果你希望以后都直接用 `linx` 命令：
+如果你要自己发布新版本，流程可以保持成这样：
 
 ```bash
-npm link
-linx .
+npm login
+npm test
+npm run pack:check
+npm publish --access public
 ```
 
 ## 后续计划
