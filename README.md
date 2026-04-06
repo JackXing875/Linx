@@ -7,8 +7,6 @@
 </p>
 
 <p align="center">
-  <img alt="npm version" src="https://img.shields.io/npm/v/%40jackxing875%2Flinx?style=flat-square">
-  <img alt="package name" src="https://img.shields.io/badge/package-%40jackxing875%2Flinx-111827?style=flat-square">
   <img alt="license" src="https://img.shields.io/badge/license-GPLv3-16a34a?style=flat-square">
   <img alt="runtime" src="https://img.shields.io/badge/runtime-Node.js-5fa04e?style=flat-square">
 </p>
